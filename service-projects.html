@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنفيذ المشاريع - شركة الاتحاد للتطوير</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand">
+                <img src="images/Gemini_Generated_Image_qj8wbcqj8wbcqj8w.png" alt="شعار الشركة">
+                تنفيذ المشاريع
+            </div>
+            <nav class="site-nav">
+                <a href="index.html">الصفحة الرئيسية</a>
+                <a href="service-factories.html">مصانع خرسانة</a>
+                <a href="service-structures.html">سقوف وهياكل معدنية</a>
+                <a href="service-paint.html">دهانات وتنسيق</a>
+            </nav>
+        </header>
+
+        <section class="about-section">
+            <div class="section-head">
+                <h2>تنفيذ المشاريع</h2>
+                <p>مشاريع تنفيذية كاملة نعرض فيها الأعمال من التخطيط حتى التسليم النهائي.</p>
+            </div>
+            <div class="gallery-grid">
+                <img src="images/3.1.jpeg" alt="دهان 1">
+                <img src="images/3.2.jpeg" alt="دهان 2">
+                <img src="images/3.3.jpeg" alt="دهان 3">
+                <img src="images/3.4.jpeg" alt="دهان 4">
+                <img src="images/3.5.jpeg" alt="دهان 5">
+                <img src="images/3.6.jpeg" alt="دهان 6">
+                <img src="images/3.7.jpeg" alt="دهان 7">
+                <img src="images/3.8.jpeg" alt="دهان 8">
+            </div>
+        </section>
+        <div class="image-modal" id="imageModal">
+            <button class="modal-close" id="modalClose">×</button>
+            <img src="" alt="">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
++
+    </div>
++
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = modal.querySelector('img');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalClose = document.getElementById('modalClose');
+
+        document.querySelectorAll('.gallery-grid img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('open');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modalCaption.textContent = img.alt;
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('open');
+        });
+
+        modal.addEventListener('click', event => {
+            if (event.target === modal) {
+                modal.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
